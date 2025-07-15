@@ -1,0 +1,3 @@
+# Aave V2 Wallet Credit Scoring
+
+This project assigns credit scores (0-1000) to wallets based on historical transaction behavior from Aave V2 protocol...
