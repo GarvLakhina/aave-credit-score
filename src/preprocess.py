@@ -79,6 +79,12 @@ def engineer_features(df):
         # 6. Frequency of actions (txs per day)
         feat['tx_frequency_per_day'] = len(group) / feat['activity_span_days'] if feat['activity_span_days'] > 0 else len(group)
 
+        # 7. Borrow / Deposit ratio (riskiness)
+        if feat['total_deposits'] > 0:
+            feat['borrow_deposit_ratio'] = feat['total_borrows'] / feat['total_deposits']
+        else:
+            feat['borrow_deposit_ratio'] = float('inf') if feat['total_borrows'] > 0 else 0
+
         features.append(feat)
 
     return pd.DataFrame(features)
