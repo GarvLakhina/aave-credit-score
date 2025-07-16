@@ -95,7 +95,7 @@ Example bucket counts (after normalization):
    ```
 2. Run the scoring pipeline:
    ```bash
-   python src/score_wallets.py --input data/sample_user_transactions.json --output results/wallet_scores.csv
+   python src/wallet_credit_score.py --file data/sample_user_transactions.json --output results/wallet_scores.csv
    ```
 3. Generate analysis/plot:
    ```bash
@@ -114,11 +114,12 @@ Example bucket counts (after normalization):
 │   ├── score_distribution.png         # Score histogram
 │   └── bucket_counts.json             # Score buckets
 ├── src/
-│   ├── preprocess.py                  # Feature engineering
-│   ├── score_model.py                 # Scoring logic
-│   └── score_wallets.py               # Pipeline entry point
+│   └── wallet_credit_score.py         # One-step scoring script (main entry point)
 ├── scripts/
 │   └── generate_analysis.py           # Plotting/statistics
+├── notebooks/                         # (Optional) Jupyter notebooks for exploration
+├── requirements.txt                   # Python dependencies
+├── analysis.md                        # Score analysis and interpretation
 └── README.md
 ```
 
